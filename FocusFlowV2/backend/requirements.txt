@@ -1,0 +1,5 @@
+FastAPI
+Uvicorn
+Pydantic
+Google-GenAI
+yt-dlp

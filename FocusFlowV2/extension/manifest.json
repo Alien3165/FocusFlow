@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "FocusFlow",
+  "version": "0.1",
+  "description": "FocusFlow detects educational videos and generates AI-powered notes.",
+  "permissions": ["tabs", "activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.khanacademy.org/*",
+    "*://*.collegeboard.org/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "FocusFlow",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.khanacademy.org/*",
+        "*://*.collegeboard.org/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
